@@ -28,7 +28,7 @@ class DebugToken:
     expires_at: int
     is_valid: bool
     scopes: list
-    metadata: TokenMetadata
+    metadata: TokenMetadata = None
 
 
 @dataclass

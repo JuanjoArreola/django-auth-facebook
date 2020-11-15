@@ -17,7 +17,7 @@ class DebugTokenSerializer(serializers.Serializer):
     expires_at = serializers.IntegerField()
     is_valid = serializers.BooleanField()
     scopes = serializers.ListSerializer(child=serializers.CharField())
-    metadata = MetadataSerializer()
+    metadata = MetadataSerializer(required=False)
 
 
 class DebugContainerSerializer(serializers.Serializer):

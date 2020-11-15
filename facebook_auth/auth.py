@@ -23,8 +23,8 @@ class FacebookAuth(ABC):
             return self._update_token(token, facebook_user), False
         except FacebookUser.DoesNotExist:
             if not self.permissions.issubset(info.scopes):
-                raise UserInputError(_('Some required permission were not granted'), 'facebook_auth.permissions',
-                                     _('Allow the required permissions to continue'))
+                raise UserInputError(_('Some required permissions were not granted'), 'facebook_auth.permissions',
+                                     _('Grant all required permissions to continue'))
             return self.signup(token), True
 
     def _update_token(self, token, facebook_user):
