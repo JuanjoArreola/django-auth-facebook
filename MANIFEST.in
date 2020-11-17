@@ -1,0 +1,1 @@
+recursive-include facebook_auth/locale *.mo
