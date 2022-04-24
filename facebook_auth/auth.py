@@ -41,6 +41,9 @@ class FacebookAuth(ABC):
     def get_user(self, profile: Profile):
         pass
 
+    def get_username(self, profile: Profile):
+        return f'{profile.name}_{profile.id}'
+
     def get_profile(self, token, fields=None) -> Profile:
         fields = fields or ['id', 'name', 'first_name', 'last_name', 'picture', 'email']
         url = f'https://graph.facebook.com/me?fields={",".join(fields)}&access_token={token}'
