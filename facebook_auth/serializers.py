@@ -44,7 +44,7 @@ class PictureDataSerializer(serializers.Serializer):
 class ProfileSerializer(serializers.Serializer):
     id = serializers.CharField()
     name = serializers.CharField()
-    email = serializers.EmailField()
+    email = serializers.EmailField(required=False)
     first_name = serializers.CharField()
     last_name = serializers.CharField()
     picture = PictureDataSerializer()

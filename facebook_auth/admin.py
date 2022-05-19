@@ -6,4 +6,4 @@ from facebook_auth.models import FacebookUser
 
 @register(FacebookUser)
 class FacebookUserAdmin(admin.ModelAdmin):
-    list_display = ['facebook_id', 'user']
+    list_display = ['facebook_id', 'user', 'created']

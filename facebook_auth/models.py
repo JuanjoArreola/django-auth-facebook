@@ -11,6 +11,12 @@ class FacebookUser(models.Model):
     token = models.TextField('Token')
     created = models.DateTimeField(_('Created'), auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.user.username} [{self.facebook_id}]'
+
+    class Meta:
+        ordering = ['-created']
+
 
 @dataclass
 class TokenMetadata:
@@ -40,10 +46,10 @@ class Picture:
 class Profile:
     id: str
     name: str
-    email: str
     first_name: str
     last_name: str
     picture: Picture
+    email: str = None
 
 
 @dataclass
